@@ -1,5 +1,5 @@
-import UserFormSS from "@/app/components/UserFormSS";
+import UserFormServerSide from "@/app/components/UserFormServerSide";
 
 export default function UserFormPage() {
-  return <UserFormSS />;
+  return <UserFormServerSide />;
 }
