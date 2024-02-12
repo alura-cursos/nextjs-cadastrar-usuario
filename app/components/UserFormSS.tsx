@@ -1,13 +1,31 @@
+import axios from "axios";
+import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
 import React from "react";
-import { addUser } from "../actions";
+
+const addUser = async (data: FormData) => {
+  // Logica para inserir os dados do form...
+  const name = data.get("name")?.toString();
+  const birthday = data.get("birthday")?.toString();
+  const newUserBody = {
+    name,
+    birthday,
+  };
+  // Post user para o mock database
+  await axios.post("http://localhost:3000/api/users", newUserBody);
+  // Refetch User's
+  revalidateTag("User");
+  // Redireciona o user de volta para Homepage
+  redirect("/");
+};
 
 export default function UserFormSS() {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-900">
       <div className="max-w-xl mx-auto px-4 w-full">
         <h1 className="text-4xl font-bold mb-5">Cadastrar usuário</h1>
-        {/* Invoke the action using the "action" attribute */}
-        <form action={addUser} className="space-y-4">
+        {/* Invocar a ação utilizando o atributo "action" */}
+        <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">Nome:</label>
             <input

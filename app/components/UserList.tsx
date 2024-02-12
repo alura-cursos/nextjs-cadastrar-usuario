@@ -2,9 +2,7 @@ import React from "react";
 import { User } from "../lib/types";
 
 export default async function UserList() {
-  const users = await fetch("http://localhost:3000/api/users", {
-    next: { tags: ["User"] },
-  });
+  const users = await fetch("");
 
   const { data } = await users.json();
 
