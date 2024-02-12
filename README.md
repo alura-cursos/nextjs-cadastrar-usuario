@@ -15,7 +15,7 @@
    yarn dev
    ```
 
-## GET API
+## API
 
 ### Obter Todos os Usuário
 
@@ -48,7 +48,7 @@ const user = {
   birthday: "2003-01-01",
 };
 // Opção 1: Usando fetch
-fetch("http://localhost:3000/api/user", {
+fetch("http://localhost:3000/api/users", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -60,5 +60,5 @@ fetch("http://localhost:3000/api/user", {
   .catch((error) => console.error("Erro:", error));
 
 // Opção 2: Usando axios
-await axios.post("http://localhost:3000/api/user", user);
+await axios.post("http://localhost:3000/api/users", user);
 ```
