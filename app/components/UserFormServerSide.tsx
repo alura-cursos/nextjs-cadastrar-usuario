@@ -27,6 +27,7 @@ export default function UserFormServerSide() {
           Cadastrar usuário
         </h1>
         <form className="space-y-6 p-10 bg-gray-800 rounded-md">
+          <div className="text-2xl font-bold text-white">Insira os dados:</div>
           <div>
             <label className="block text-sm font-medium text-white mb-1">
               Nome:

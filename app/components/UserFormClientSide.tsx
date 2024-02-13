@@ -21,6 +21,8 @@ export default function UserFormCS() {
           action={handleSubmit}
           className="space-y-6 p-10 bg-gray-800 rounded-md"
         >
+          <div className="text-2xl font-bold text-white">Insira os dados:</div>
+
           <div>
             <label
               htmlFor="name"
