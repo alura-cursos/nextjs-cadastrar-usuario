@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { addUser } from "../actions";
+import { addUser } from "../actions/user";
 
-export default function UserFormCS() {
+export default function UserFormClientSide() {
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
 

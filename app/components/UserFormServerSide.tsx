@@ -15,7 +15,7 @@ const addUser = async (data: FormData) => {
   await axios.post("http://localhost:3000/api/users", newUserBody);
   // Refetch User's
   revalidateTag("User");
-  // Redireciona o user de volta para Homepage
+
   redirect("/");
 };
 
