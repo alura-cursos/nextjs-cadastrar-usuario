@@ -52,7 +52,7 @@ export default function UserFormServerSide() {
 
           <button
             type="submit"
-            className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-md"
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md"
           >
             Cadastrar usuário
           </button>

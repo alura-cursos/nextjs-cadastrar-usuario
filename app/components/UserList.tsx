@@ -16,7 +16,7 @@ export default async function UserList() {
             className="bg-gray-800 p-4 rounded-lg mb-2 flex justify-between"
           >
             <div>{user.name}</div>
-            <div className="bg-purple-400 text-gray-900 px-2 py-1 rounded text-sm">
+            <div className="bg-purple-500 text-gray-900 px-2 py-1 rounded text-sm text-white">
               {user.birthday}
             </div>
           </li>
