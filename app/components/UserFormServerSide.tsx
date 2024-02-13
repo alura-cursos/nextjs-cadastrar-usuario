@@ -1,23 +1,5 @@
-import axios from "axios";
-import { revalidateTag } from "next/cache";
-import { redirect } from "next/navigation";
 import React from "react";
-
-const addUser = async (data: FormData) => {
-  // Logica para inserir os dados do form...
-  const name = data.get("name")?.toString();
-  const birthday = data.get("birthday")?.toString();
-  const newUserBody = {
-    name,
-    birthday,
-  };
-  // Post user para o mock database
-  await axios.post("http://localhost:3000/api/users", newUserBody);
-  // Refetch User's
-  revalidateTag("User");
-
-  redirect("/");
-};
+import { addUser } from "@/app/actions/user";
 
 export default function UserFormServerSide() {
   return (
@@ -26,7 +8,10 @@ export default function UserFormServerSide() {
         <h1 className="text-4xl font-bold text-white mb-5">
           Cadastrar usuário
         </h1>
-        <form className="space-y-6 p-10 bg-gray-800 rounded-md">
+        <form
+          action={addUser}
+          className="space-y-6 p-10 bg-gray-800 rounded-md"
+        >
           <div className="text-2xl font-bold text-white">Insira os dados:</div>
           <div>
             <label className="block text-sm font-medium text-white mb-1">
